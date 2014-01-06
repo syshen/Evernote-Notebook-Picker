@@ -28,7 +28,7 @@ NS_ENUM(NSInteger, ENPEntryType) {
 @implementation ENPEntry
 @end
 
-@interface ENNotebookPickerViewController () <ExpandableTableViewDataSource, ExpandableTableViewDelegate, UISearchDisplayDelegate>
+@interface ENNotebookPickerViewController () <ExpandableTableViewDataSource, ExpandableTableViewDelegate, UISearchDisplayDelegate, UITableViewDataSource>
 
 @property (nonatomic, weak) IBOutlet ExpandableTableView *tableView;
 @property (nonatomic, strong) UISearchBar *searchBar;
