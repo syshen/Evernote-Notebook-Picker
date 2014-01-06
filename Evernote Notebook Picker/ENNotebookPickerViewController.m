@@ -28,7 +28,7 @@ NS_ENUM(NSInteger, ENPEntryType) {
 @implementation ENPEntry
 @end
 
-@interface ENNotebookPickerViewController () <ExpandableTableViewDataSource, ExpandableTableViewDelegate, UISearchDisplayDelegate, UITableViewDataSource>
+@interface ENNotebookPickerViewController () <ExpandableTableViewDataSource, ExpandableTableViewDelegate, UISearchDisplayDelegate, UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic, weak) IBOutlet ExpandableTableView *tableView;
 @property (nonatomic, strong) UISearchBar *searchBar;
@@ -91,6 +91,7 @@ NS_ENUM(NSInteger, ENPEntryType) {
   _searchDisplayController = [[UISearchDisplayController alloc] initWithSearchBar:self.searchBar contentsController:self];
   _searchDisplayController.delegate = self;
   _searchDisplayController.searchResultsDataSource = self;
+  _searchDisplayController.searchResultsDelegate = self;
   
   __weak ENNotebookPickerViewController *wSelf = self;
   [[EvernoteNoteStore noteStore] listNotebooksWithSuccess:^(NSArray *notebooks) {
@@ -259,12 +260,18 @@ NS_ENUM(NSInteger, ENPEntryType) {
 
 - (void) tableView:(ExpandableTableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
   
-  ENPEntry *entry = self.entries[indexPath.section];
-  EDAMNotebook *notebook = entry.stackedNotebooks[indexPath.row];
-  if (self.completionBlock)
-    self.completionBlock(notebook);
-  [self.navigationController dismissViewControllerAnimated:YES completion:nil];
-  
+  if (tableView == self.searchDisplayController.searchResultsTableView) {
+    EDAMNotebook *notebook = self.searchResults[indexPath.row];
+    if (self.completionBlock)
+      self.completionBlock(notebook);
+    [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+  } else {
+    ENPEntry *entry = self.entries[indexPath.section];
+    EDAMNotebook *notebook = entry.stackedNotebooks[indexPath.row];
+    if (self.completionBlock)
+      self.completionBlock(notebook);
+    [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+  }
 }
 
 - (void) tableView:(ExpandableTableView *)tableView didExpandSection:(NSUInteger)section {
