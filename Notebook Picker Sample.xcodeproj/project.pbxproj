@@ -21,6 +21,20 @@
 		8005BCD2187A6CA00087F277 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8005BCB4187A6C9F0087F277 /* UIKit.framework */; };
 		8005BCDA187A6CA00087F277 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8005BCD8187A6CA00087F277 /* InfoPlist.strings */; };
 		8005BCDC187A6CA00087F277 /* Notebook_Picker_SampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8005BCDB187A6CA00087F277 /* Notebook_Picker_SampleTests.m */; };
+		8005BCF8187A72BA0087F277 /* ENNotebookPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8005BCF6187A72BA0087F277 /* ENNotebookPickerViewController.m */; };
+		8005BD08187A9BF80087F277 /* ENStackCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8005BD07187A9BF80087F277 /* ENStackCell.m */; };
+		8005BD15187AAE3C0087F277 /* ExpandableTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8005BD10187AAE3C0087F277 /* ExpandableTableView.m */; };
+		8005BD16187AAE3C0087F277 /* ExpandableTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8005BD12187AAE3C0087F277 /* ExpandableTableViewController.m */; };
+		8005BD1D187AB25A0087F277 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8005BD1C187AB25A0087F277 /* Cocoa.framework */; };
+		8005BD27187AB25A0087F277 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8005BD25187AB25A0087F277 /* InfoPlist.strings */; };
+		8005BD36187AB3B00087F277 /* down@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8005BD2C187AB3A20087F277 /* down@2x.png */; };
+		8005BD37187AB3B00087F277 /* ENNotebookPickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8005BD2D187AB3A20087F277 /* ENNotebookPickerViewController.xib */; };
+		8005BD38187AB3B00087F277 /* ENStackCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8005BD2E187AB3A20087F277 /* ENStackCell.xib */; };
+		8005BD39187AB3B00087F277 /* stack@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8005BD2F187AB3A20087F277 /* stack@2x.png */; };
+		8005BD3A187AB3B00087F277 /* up@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8005BD30187AB3A20087F277 /* up@2x.png */; };
+		8005BD40187AB8480087F277 /* NotebookPicker.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 8005BD1B187AB25A0087F277 /* NotebookPicker.bundle */; };
+		8005BD43187AB9FC0087F277 /* UIImage+ENPAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 8005BD42187AB9FC0087F277 /* UIImage+ENPAdditions.m */; };
+		DFC74B18C1694CBF85A872AE /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 679D9603F68A48E28E3C916F /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,9 +45,17 @@
 			remoteGlobalIDString = 8005BCAC187A6C9F0087F277;
 			remoteInfo = "Notebook Picker Sample";
 		};
+		8005BD3D187AB4B00087F277 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8005BCA5187A6C9F0087F277 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8005BD1A187AB25A0087F277;
+			remoteInfo = NotebookPicker;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		679D9603F68A48E28E3C916F /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		8005BCAD187A6C9F0087F277 /* Notebook Picker Sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Notebook Picker Sample.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8005BCB0187A6C9F0087F277 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		8005BCB2187A6C9F0087F277 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -53,6 +75,32 @@
 		8005BCD7187A6CA00087F277 /* Notebook Picker SampleTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Notebook Picker SampleTests-Info.plist"; sourceTree = "<group>"; };
 		8005BCD9187A6CA00087F277 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		8005BCDB187A6CA00087F277 /* Notebook_Picker_SampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Notebook_Picker_SampleTests.m; sourceTree = "<group>"; };
+		8005BCF5187A72BA0087F277 /* ENNotebookPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ENNotebookPickerViewController.h; path = "Evernote Notebook Picker/ENNotebookPickerViewController.h"; sourceTree = "<group>"; };
+		8005BCF6187A72BA0087F277 /* ENNotebookPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ENNotebookPickerViewController.m; path = "Evernote Notebook Picker/ENNotebookPickerViewController.m"; sourceTree = "<group>"; };
+		8005BD06187A9BF80087F277 /* ENStackCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ENStackCell.h; path = "Evernote Notebook Picker/ENStackCell.h"; sourceTree = "<group>"; };
+		8005BD07187A9BF80087F277 /* ENStackCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ENStackCell.m; path = "Evernote Notebook Picker/ENStackCell.m"; sourceTree = "<group>"; };
+		8005BD0F187AAE3C0087F277 /* ExpandableTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ExpandableTableView.h; path = "Evernote Notebook Picker/ExpandableTableView.h"; sourceTree = "<group>"; };
+		8005BD10187AAE3C0087F277 /* ExpandableTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ExpandableTableView.m; path = "Evernote Notebook Picker/ExpandableTableView.m"; sourceTree = "<group>"; };
+		8005BD11187AAE3C0087F277 /* ExpandableTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ExpandableTableViewController.h; path = "Evernote Notebook Picker/ExpandableTableViewController.h"; sourceTree = "<group>"; };
+		8005BD12187AAE3C0087F277 /* ExpandableTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ExpandableTableViewController.m; path = "Evernote Notebook Picker/ExpandableTableViewController.m"; sourceTree = "<group>"; };
+		8005BD13187AAE3C0087F277 /* ExpandableTableViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ExpandableTableViewDataSource.h; path = "Evernote Notebook Picker/ExpandableTableViewDataSource.h"; sourceTree = "<group>"; };
+		8005BD14187AAE3C0087F277 /* ExpandableTableViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ExpandableTableViewDelegate.h; path = "Evernote Notebook Picker/ExpandableTableViewDelegate.h"; sourceTree = "<group>"; };
+		8005BD1B187AB25A0087F277 /* NotebookPicker.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NotebookPicker.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		8005BD1C187AB25A0087F277 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
+		8005BD1F187AB25A0087F277 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		8005BD20187AB25A0087F277 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		8005BD21187AB25A0087F277 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		8005BD24187AB25A0087F277 /* NotebookPicker-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "NotebookPicker-Info.plist"; sourceTree = "<group>"; };
+		8005BD26187AB25A0087F277 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		8005BD28187AB25A0087F277 /* NotebookPicker-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NotebookPicker-Prefix.pch"; sourceTree = "<group>"; };
+		8005BD2C187AB3A20087F277 /* down@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "down@2x.png"; path = "Evernote Notebook Picker/down@2x.png"; sourceTree = "<group>"; };
+		8005BD2D187AB3A20087F277 /* ENNotebookPickerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ENNotebookPickerViewController.xib; path = "Evernote Notebook Picker/ENNotebookPickerViewController.xib"; sourceTree = "<group>"; };
+		8005BD2E187AB3A20087F277 /* ENStackCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ENStackCell.xib; path = "Evernote Notebook Picker/ENStackCell.xib"; sourceTree = "<group>"; };
+		8005BD2F187AB3A20087F277 /* stack@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "stack@2x.png"; path = "Evernote Notebook Picker/stack@2x.png"; sourceTree = "<group>"; };
+		8005BD30187AB3A20087F277 /* up@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "up@2x.png"; path = "Evernote Notebook Picker/up@2x.png"; sourceTree = "<group>"; };
+		8005BD41187AB9FC0087F277 /* UIImage+ENPAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+ENPAdditions.h"; path = "Evernote Notebook Picker/UIImage+ENPAdditions.h"; sourceTree = "<group>"; };
+		8005BD42187AB9FC0087F277 /* UIImage+ENPAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+ENPAdditions.m"; path = "Evernote Notebook Picker/UIImage+ENPAdditions.m"; sourceTree = "<group>"; };
+		A1DACB4CD0FD47E2941BB6DA /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +111,7 @@
 				8005BCB3187A6C9F0087F277 /* CoreGraphics.framework in Frameworks */,
 				8005BCB5187A6C9F0087F277 /* UIKit.framework in Frameworks */,
 				8005BCB1187A6C9F0087F277 /* Foundation.framework in Frameworks */,
+				DFC74B18C1694CBF85A872AE /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,16 +125,27 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8005BD18187AB25A0087F277 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8005BD1D187AB25A0087F277 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		8005BCA4187A6C9F0087F277 = {
 			isa = PBXGroup;
 			children = (
+				8005BCE5187A6CA90087F277 /* Evernote Notebook Picker */,
 				8005BCB6187A6C9F0087F277 /* Notebook Picker Sample */,
 				8005BCD5187A6CA00087F277 /* Notebook Picker SampleTests */,
+				8005BD22187AB25A0087F277 /* NotebookPicker */,
 				8005BCAF187A6C9F0087F277 /* Frameworks */,
 				8005BCAE187A6C9F0087F277 /* Products */,
+				A1DACB4CD0FD47E2941BB6DA /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -94,6 +154,7 @@
 			children = (
 				8005BCAD187A6C9F0087F277 /* Notebook Picker Sample.app */,
 				8005BCCE187A6C9F0087F277 /* Notebook Picker SampleTests.xctest */,
+				8005BD1B187AB25A0087F277 /* NotebookPicker.bundle */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -105,6 +166,9 @@
 				8005BCB2187A6C9F0087F277 /* CoreGraphics.framework */,
 				8005BCB4187A6C9F0087F277 /* UIKit.framework */,
 				8005BCCF187A6C9F0087F277 /* XCTest.framework */,
+				679D9603F68A48E28E3C916F /* libPods.a */,
+				8005BD1C187AB25A0087F277 /* Cocoa.framework */,
+				8005BD1E187AB25A0087F277 /* Other Frameworks */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -152,6 +216,58 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		8005BCE5187A6CA90087F277 /* Evernote Notebook Picker */ = {
+			isa = PBXGroup;
+			children = (
+				8005BD2C187AB3A20087F277 /* down@2x.png */,
+				8005BD2D187AB3A20087F277 /* ENNotebookPickerViewController.xib */,
+				8005BD2E187AB3A20087F277 /* ENStackCell.xib */,
+				8005BD2F187AB3A20087F277 /* stack@2x.png */,
+				8005BD30187AB3A20087F277 /* up@2x.png */,
+				8005BD0F187AAE3C0087F277 /* ExpandableTableView.h */,
+				8005BD10187AAE3C0087F277 /* ExpandableTableView.m */,
+				8005BD11187AAE3C0087F277 /* ExpandableTableViewController.h */,
+				8005BD12187AAE3C0087F277 /* ExpandableTableViewController.m */,
+				8005BD13187AAE3C0087F277 /* ExpandableTableViewDataSource.h */,
+				8005BD14187AAE3C0087F277 /* ExpandableTableViewDelegate.h */,
+				8005BCF5187A72BA0087F277 /* ENNotebookPickerViewController.h */,
+				8005BCF6187A72BA0087F277 /* ENNotebookPickerViewController.m */,
+				8005BD41187AB9FC0087F277 /* UIImage+ENPAdditions.h */,
+				8005BD42187AB9FC0087F277 /* UIImage+ENPAdditions.m */,
+				8005BD06187A9BF80087F277 /* ENStackCell.h */,
+				8005BD07187A9BF80087F277 /* ENStackCell.m */,
+			);
+			name = "Evernote Notebook Picker";
+			sourceTree = "<group>";
+		};
+		8005BD1E187AB25A0087F277 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8005BD1F187AB25A0087F277 /* Foundation.framework */,
+				8005BD20187AB25A0087F277 /* CoreData.framework */,
+				8005BD21187AB25A0087F277 /* AppKit.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		8005BD22187AB25A0087F277 /* NotebookPicker */ = {
+			isa = PBXGroup;
+			children = (
+				8005BD23187AB25A0087F277 /* Supporting Files */,
+			);
+			path = NotebookPicker;
+			sourceTree = "<group>";
+		};
+		8005BD23187AB25A0087F277 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8005BD24187AB25A0087F277 /* NotebookPicker-Info.plist */,
+				8005BD25187AB25A0087F277 /* InfoPlist.strings */,
+				8005BD28187AB25A0087F277 /* NotebookPicker-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -159,13 +275,16 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8005BCDF187A6CA00087F277 /* Build configuration list for PBXNativeTarget "Notebook Picker Sample" */;
 			buildPhases = (
+				573F5207932C4A099A289A4F /* Check Pods Manifest.lock */,
 				8005BCA9187A6C9F0087F277 /* Sources */,
 				8005BCAA187A6C9F0087F277 /* Frameworks */,
 				8005BCAB187A6C9F0087F277 /* Resources */,
+				97DEA88BA62A44C5B4431545 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				8005BD3E187AB4B00087F277 /* PBXTargetDependency */,
 			);
 			name = "Notebook Picker Sample";
 			productName = "Notebook Picker Sample";
@@ -189,6 +308,23 @@
 			productName = "Notebook Picker SampleTests";
 			productReference = 8005BCCE187A6C9F0087F277 /* Notebook Picker SampleTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		8005BD1A187AB25A0087F277 /* NotebookPicker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8005BD29187AB25A0087F277 /* Build configuration list for PBXNativeTarget "NotebookPicker" */;
+			buildPhases = (
+				8005BD17187AB25A0087F277 /* Sources */,
+				8005BD18187AB25A0087F277 /* Frameworks */,
+				8005BD19187AB25A0087F277 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NotebookPicker;
+			productName = NotebookPicker;
+			productReference = 8005BD1B187AB25A0087F277 /* NotebookPicker.bundle */;
+			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
 
@@ -220,6 +356,7 @@
 			targets = (
 				8005BCAC187A6C9F0087F277 /* Notebook Picker Sample */,
 				8005BCCD187A6C9F0087F277 /* Notebook Picker SampleTests */,
+				8005BD1A187AB25A0087F277 /* NotebookPicker */,
 			);
 		};
 /* End PBXProject section */
@@ -229,6 +366,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8005BD40187AB8480087F277 /* NotebookPicker.bundle in Resources */,
 				8005BCC9187A6C9F0087F277 /* Images.xcassets in Resources */,
 				8005BCBB187A6C9F0087F277 /* InfoPlist.strings in Resources */,
 				8005BCC4187A6C9F0087F277 /* Main.storyboard in Resources */,
@@ -243,16 +381,67 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8005BD19187AB25A0087F277 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8005BD36187AB3B00087F277 /* down@2x.png in Resources */,
+				8005BD37187AB3B00087F277 /* ENNotebookPickerViewController.xib in Resources */,
+				8005BD38187AB3B00087F277 /* ENStackCell.xib in Resources */,
+				8005BD39187AB3B00087F277 /* stack@2x.png in Resources */,
+				8005BD3A187AB3B00087F277 /* up@2x.png in Resources */,
+				8005BD27187AB25A0087F277 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		573F5207932C4A099A289A4F /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		97DEA88BA62A44C5B4431545 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		8005BCA9187A6C9F0087F277 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8005BCF8187A72BA0087F277 /* ENNotebookPickerViewController.m in Sources */,
+				8005BD15187AAE3C0087F277 /* ExpandableTableView.m in Sources */,
 				8005BCC1187A6C9F0087F277 /* ENPAppDelegate.m in Sources */,
+				8005BD08187A9BF80087F277 /* ENStackCell.m in Sources */,
 				8005BCBD187A6C9F0087F277 /* main.m in Sources */,
 				8005BCC7187A6C9F0087F277 /* ENPViewController.m in Sources */,
+				8005BD16187AAE3C0087F277 /* ExpandableTableViewController.m in Sources */,
+				8005BD43187AB9FC0087F277 /* UIImage+ENPAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,6 +453,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8005BD17187AB25A0087F277 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -271,6 +467,11 @@
 			isa = PBXTargetDependency;
 			target = 8005BCAC187A6C9F0087F277 /* Notebook Picker Sample */;
 			targetProxy = 8005BCD3187A6CA00087F277 /* PBXContainerItemProxy */;
+		};
+		8005BD3E187AB4B00087F277 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8005BD1A187AB25A0087F277 /* NotebookPicker */;
+			targetProxy = 8005BD3D187AB4B00087F277 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -295,6 +496,14 @@
 			isa = PBXVariantGroup;
 			children = (
 				8005BCD9187A6CA00087F277 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		8005BD25187AB25A0087F277 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8005BD26187AB25A0087F277 /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -376,6 +585,7 @@
 		};
 		8005BCE0187A6CA00087F277 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A1DACB4CD0FD47E2941BB6DA /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -389,6 +599,7 @@
 		};
 		8005BCE1187A6CA00087F277 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A1DACB4CD0FD47E2941BB6DA /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -442,6 +653,53 @@
 			};
 			name = Release;
 		};
+		8005BD2A187AB25A0087F277 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "NotebookPicker/NotebookPicker-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "NotebookPicker/NotebookPicker-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		8005BD2B187AB25A0087F277 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "NotebookPicker/NotebookPicker-Prefix.pch";
+				INFOPLIST_FILE = "NotebookPicker/NotebookPicker-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -461,12 +719,22 @@
 				8005BCE1187A6CA00087F277 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8005BCE2187A6CA00087F277 /* Build configuration list for PBXNativeTarget "Notebook Picker SampleTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				8005BCE3187A6CA00087F277 /* Debug */,
 				8005BCE4187A6CA00087F277 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8005BD29187AB25A0087F277 /* Build configuration list for PBXNativeTarget "NotebookPicker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8005BD2A187AB25A0087F277 /* Debug */,
+				8005BD2B187AB25A0087F277 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};

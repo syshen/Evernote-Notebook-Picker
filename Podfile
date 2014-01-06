@@ -1,0 +1,1 @@
+pod 'Evernote-SDK-iOS'

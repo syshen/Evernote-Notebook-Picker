@@ -7,13 +7,22 @@
 //
 
 #import "ENPAppDelegate.h"
+#import <Evernote-SDK-iOS/EvernoteSDK.h>
 
 @implementation ENPAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
-    return YES;
+  NSString * const EVERNOTE_HOST = BootstrapServerBaseURLStringSandbox;
+//  NSString * const EVERNOTE_HOST = BootstrapServerBaseURLStringUS;
+  NSString * ENConsumerKey = @"syshen-1171";
+  NSString * ENConsumerSecret = @"bcae39e92876abfd";
+  
+  [EvernoteSession setSharedSessionHost:EVERNOTE_HOST
+                            consumerKey:ENConsumerKey
+                         consumerSecret:ENConsumerSecret];
+
+  return YES;
 }
 							
 - (void)applicationWillResignActive:(UIApplication *)application
