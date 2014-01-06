@@ -11,7 +11,7 @@
 #import "ENNotebookPickerViewController.h"
 
 @interface ENPViewController ()
-
+@property (nonatomic, strong) EDAMNotebook *selectedNotebook;
 @end
 
 @implementation ENPViewController
@@ -26,8 +26,10 @@
   
   [super viewDidAppear:animated];
   
-  if([[EvernoteSession sharedSession] isAuthenticated]) {
-    UIViewController *vc = [ENNotebookPickerViewController controller];
+  if([[EvernoteSession sharedSession] isAuthenticated] && !self.selectedNotebook) {
+    UIViewController *vc = [ENNotebookPickerViewController controllerWithCompletion:^(EDAMNotebook *notebook) {
+      self.selectedNotebook = notebook;
+    }];
     [self presentViewController:vc animated:YES completion:nil];
   }
   

@@ -184,21 +184,21 @@
 	NSInteger sections1 = [self numberOfSections];
 	for (NSInteger i = 0; i < sections1; i++) {
 		NSInteger rows = [self numberOfRowsInSection:i];
-		[s appendFormat:@"Section %ld has %ld rows\n", i, rows];
+		[s appendFormat:@"Section %lu has %lu rows\n", i, rows];
 	}
 	
 	[s appendFormat:@"--- DataModel ---\n"];
 	NSInteger sections2 = [self numberOfSectionsInTableView:self];
 	for (NSInteger i = 0; i < sections2; i++) {
 		NSInteger rows = [self tableView:self numberOfRowsInSection:i];
-		[s appendFormat:@"Section %ld has %ld rows\n", i, rows];
+		[s appendFormat:@"Section %lu has %lu rows\n", i, rows];
 	}
 	
 	[s appendFormat:@"--- Representation ---\n"];
 	NSInteger sections3 = [_expandableDataSource numberOfSectionsInTableView:self];
 	for (NSInteger i = 0; i < sections3; i++) {
 		NSInteger rows = [_expandableDataSource tableView:self numberOfRowsInSection:i];
-		[s appendFormat:@"Section %ld has %ld rows\n", i, rows];
+		[s appendFormat:@"Section %lu has %lu rows\n", i, rows];
 	}
 	[s appendFormat:@"\n"];
 	
@@ -578,7 +578,7 @@
 	}
 	if ([correctedIndexPaths count]) {
 		[super insertRowsAtIndexPaths:correctedIndexPaths withRowAnimation:animation];
-		NSLog(@"Adding %lu rows", [correctedIndexPaths count]);
+		NSLog(@"Adding %ld rows", [correctedIndexPaths count]);
 	}
 	
 	return reloadIndexPaths;
@@ -617,7 +617,7 @@
 	}
 	if ([correctedIndexPaths count]) {
 		[super deleteRowsAtIndexPaths:correctedIndexPaths withRowAnimation:animation];
-		NSLog(@"Removing %lu rows", [correctedIndexPaths count]);
+		NSLog(@"Removing %ld rows", [correctedIndexPaths count]);
 	}
 
 	return reloadIndexPaths;

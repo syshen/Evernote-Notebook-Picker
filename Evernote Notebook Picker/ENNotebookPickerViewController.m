@@ -53,8 +53,9 @@ NS_ENUM(NSInteger, ENPEntryType) {
   return bundle;
 }
 
-+ (id) controller {
++ (id) controllerWithCompletion:(void (^)(EDAMNotebook* notebook))completionBlock {
   ENNotebookPickerViewController *picker = [[ENNotebookPickerViewController alloc] initWithNibName:@"ENNotebookPickerViewController" bundle:[ENNotebookPickerViewController bundle]];
+  picker.completionBlock = completionBlock;
   
   UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:picker];
   
@@ -74,15 +75,13 @@ NS_ENUM(NSInteger, ENPEntryType) {
 {
   [super viewDidLoad];
   
-  UIBarButtonItem *done = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(doneButtonTapped)];
+//  UIBarButtonItem *done = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(doneButtonTapped)];
 
   UIBarButtonItem *cancel = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancelButtonTapped)];
   
-  self.navigationItem.rightBarButtonItem = done;
   self.navigationItem.leftBarButtonItem = cancel;
   
   [self.tableView registerNib:[UINib nibWithNibName:@"ENStackCell" bundle:[[self class] bundle]] forCellReuseIdentifier:@"StackCell"];
-//  [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"StackCell"];
   [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"InStackCell"];
   [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"NotebookCell"];
   
@@ -90,10 +89,8 @@ NS_ENUM(NSInteger, ENPEntryType) {
   self.tableView.tableHeaderView = self.searchBar;
   
   _searchDisplayController = [[UISearchDisplayController alloc] initWithSearchBar:self.searchBar contentsController:self];
-//  _searchDisplayController.searchBar = self.searchBar;
   _searchDisplayController.delegate = self;
   _searchDisplayController.searchResultsDataSource = self;
-//  _searchDisplayController.searchResultsDelegate = self;
   
   __weak ENNotebookPickerViewController *wSelf = self;
   [[EvernoteNoteStore noteStore] listNotebooksWithSuccess:^(NSArray *notebooks) {
@@ -149,12 +146,6 @@ NS_ENUM(NSInteger, ENPEntryType) {
 - (void)didReceiveMemoryWarning
 {
   [super didReceiveMemoryWarning];
-}
-
-- (void) doneButtonTapped {
-  
-  [self.navigationController dismissViewControllerAnimated:YES completion:nil];
-  
 }
 
 - (void) cancelButtonTapped {
@@ -266,5 +257,25 @@ NS_ENUM(NSInteger, ENPEntryType) {
   
 }
 
+- (void) tableView:(ExpandableTableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+  
+  ENPEntry *entry = self.entries[indexPath.section];
+  EDAMNotebook *notebook = entry.stackedNotebooks[indexPath.row];
+  if (self.completionBlock)
+    self.completionBlock(notebook);
+  [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+  
+}
+
+- (void) tableView:(ExpandableTableView *)tableView didExpandSection:(NSUInteger)section {
+  
+  ENPEntry *entry = self.entries[section];
+  if (entry.type == ENPEntryTypeNotebook) {
+    if (self.completionBlock)
+      self.completionBlock(entry.notebook);
+    [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+  }
+  
+}
 
 @end

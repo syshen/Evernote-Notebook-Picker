@@ -7,9 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <EvernoteSDK.h>
 
 @interface ENNotebookPickerViewController : UIViewController
 
-+ (id) controller;
++ (id) controllerWithCompletion:(void (^)(EDAMNotebook* notebook))completionBlock;
+
+@property (nonatomic, copy) void (^completionBlock)(EDAMNotebook *notebook);
 
 @end
