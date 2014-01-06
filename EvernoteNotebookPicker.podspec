@@ -21,7 +21,7 @@ Pod::Spec.new do |s|
   s.source       = { :git => "https://github.com/syshen/Evernote-Notebook-Picker.git", :tag => "0.0.1" }
   s.source_files  = 'Evernote Notebook Picker', 'Evernote Notebook Picker/*.{h,m}'
   s.public_header_files = 'Evernote Notebook Picker/ENNotebookPickerViewController.h'
-  s.resource  = "NotebookPicker.bundle"
+  s.resources   = "NotebookPicker.bundle"
   s.requires_arc = true
   s.dependency 'Evernote-SDK-iOS', '~> 1.3.0'
 
