@@ -8,7 +8,7 @@ Pod::Spec.new do |s|
                    This is a simple Evernote Notebook Picker UI. It includes several features: 
                    1. Stack the notebooks
                    2. Expand / collapse stack
-                   3. Search for keyword
+                   3. Search by keyword
                    DESC
 
   s.homepage     = "https://github.com/syshen/Evernote-Notebook-Picker"

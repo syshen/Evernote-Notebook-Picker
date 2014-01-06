@@ -4,6 +4,8 @@ For a Evernote heavy user, he/she will have lots of notebook. A traditional note
 
 <img src="http://f.cl.ly/items/1D0r303c0J1w0i0A3u2U/Screen%20Shot%202014-01-06%20at%206.56.01%20PM.png" width="500"/>
 
+And demo video: http://youtu.be/bNzrLjA6nm0
+
 It is still in early development. Welcome to join me to give it more functions. 
 
 ## How to install
