@@ -34,7 +34,7 @@ NS_ENUM(NSInteger, ENPEntryType) {
 @property (nonatomic, strong) UISearchBar *searchBar;
 @property (nonatomic, strong) NSMutableArray *entries;
 @property (nonatomic, strong) NSMutableArray *searchResults;
-
+@property (nonatomic, strong) UIActivityIndicatorView *loadingActivity;
 @end
 
 @implementation ENNotebookPickerViewController {
@@ -84,6 +84,14 @@ NS_ENUM(NSInteger, ENPEntryType) {
   [self.tableView registerNib:[UINib nibWithNibName:@"ENStackCell" bundle:[[self class] bundle]] forCellReuseIdentifier:@"StackCell"];
   [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"InStackCell"];
   [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"NotebookCell"];
+  
+  self.loadingActivity = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+  self.loadingActivity.frame = CGRectMake(self.tableView.frame.size.width/2 - self.loadingActivity.frame.size.width/2, 140, self.loadingActivity.frame.size.width, self.loadingActivity.frame.size.height);
+  [self.loadingActivity setHidesWhenStopped:YES];
+  [self.loadingActivity setTintColor:[UIColor blackColor]];
+  [self.tableView addSubview:self.loadingActivity];
+  [self.loadingActivity startAnimating];
+
   
   self.searchBar = [[UISearchBar alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 44)];
   self.tableView.tableHeaderView = self.searchBar;
@@ -137,9 +145,11 @@ NS_ENUM(NSInteger, ENPEntryType) {
     wSelf.entries = entries;
     
     [wSelf.tableView reloadData];
+    [wSelf.loadingActivity stopAnimating];
  
   } failure:^(NSError *error) {
     NSLog(@"Fail to load : %@", error);
+    [wSelf.loadingActivity stopAnimating];
   }];
 
 }
