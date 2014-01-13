@@ -9,10 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface ENStackCell : UITableViewCell
-/*
-@property (nonatomic, weak) IBOutlet UIImageView *accessoryImageView;
- */
-@property (nonatomic, weak) IBOutlet UIImageView *stackImageView;
+
 @property (nonatomic, weak) IBOutlet UILabel *titleLabel;
 
 @end

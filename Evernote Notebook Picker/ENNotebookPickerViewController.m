@@ -28,6 +28,9 @@ NS_ENUM(NSInteger, ENPEntryType) {
 @implementation ENPEntry
 @end
 
+#define SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(v)  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
+#define isIOS7 SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0")
+
 @interface ENNotebookPickerViewController () <ExpandableTableViewDataSource, ExpandableTableViewDelegate, UISearchDisplayDelegate, UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic, weak) IBOutlet ExpandableTableView *tableView;
@@ -88,7 +91,8 @@ NS_ENUM(NSInteger, ENPEntryType) {
   self.loadingActivity = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
   self.loadingActivity.frame = CGRectMake(self.tableView.frame.size.width/2 - self.loadingActivity.frame.size.width/2, 140, self.loadingActivity.frame.size.width, self.loadingActivity.frame.size.height);
   [self.loadingActivity setHidesWhenStopped:YES];
-  [self.loadingActivity setTintColor:[UIColor blackColor]];
+
+  [self.loadingActivity setColor:[UIColor blackColor]];
   [self.tableView addSubview:self.loadingActivity];
   [self.loadingActivity startAnimating];
 
@@ -212,7 +216,8 @@ NS_ENUM(NSInteger, ENPEntryType) {
     ENStackCell *cell = [tableView dequeueReusableCellWithIdentifier:@"StackCell" forIndexPath:[NSIndexPath indexPathForRow:0 inSection:section]];
   
     cell.titleLabel.text = [entry name];
-    cell.separatorInset = UIEdgeInsetsZero;
+    if (isIOS7)
+      cell.separatorInset = UIEdgeInsetsZero;
 
     [(UIImageView*)cell.accessoryView setImage:[UIImage imageNamed:@"down" bundle:[[self class] bundle]]];
     return cell;
@@ -220,7 +225,8 @@ NS_ENUM(NSInteger, ENPEntryType) {
   } else {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"NotebookCell" forIndexPath:[NSIndexPath indexPathForRow:0 inSection:section]];
     cell.accessoryView = nil;
-    cell.separatorInset = UIEdgeInsetsZero;
+    if (isIOS7)
+      cell.separatorInset = UIEdgeInsetsZero;
 
     cell.textLabel.text = entry.name;
     return cell;
