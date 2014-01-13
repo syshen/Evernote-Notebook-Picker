@@ -56,7 +56,7 @@ NS_ENUM(NSInteger, ENPEntryType) {
   return bundle;
 }
 
-+ (id) controllerWithCompletion:(void (^)(EDAMNotebook* notebook))completionBlock {
++ (id) controllerWithCompletion:(void (^)(NSError *error, EDAMNotebook* notebook))completionBlock {
   ENNotebookPickerViewController *picker = [[ENNotebookPickerViewController alloc] initWithNibName:@"ENNotebookPickerViewController" bundle:[ENNotebookPickerViewController bundle]];
   picker.completionBlock = completionBlock;
   
@@ -154,6 +154,9 @@ NS_ENUM(NSInteger, ENPEntryType) {
   } failure:^(NSError *error) {
     NSLog(@"Fail to load : %@", error);
     [wSelf.loadingActivity stopAnimating];
+    
+    if (wSelf.completionBlock)
+      wSelf.completionBlock(error, nil);
   }];
 
 }
@@ -279,13 +282,13 @@ NS_ENUM(NSInteger, ENPEntryType) {
   if (tableView == self.searchDisplayController.searchResultsTableView) {
     EDAMNotebook *notebook = self.searchResults[indexPath.row];
     if (self.completionBlock)
-      self.completionBlock(notebook);
+      self.completionBlock(nil, notebook);
     [self.navigationController dismissViewControllerAnimated:YES completion:nil];
   } else {
     ENPEntry *entry = self.entries[indexPath.section];
     EDAMNotebook *notebook = entry.stackedNotebooks[indexPath.row];
     if (self.completionBlock)
-      self.completionBlock(notebook);
+      self.completionBlock(nil, notebook);
     [self.navigationController dismissViewControllerAnimated:YES completion:nil];
   }
 }
@@ -295,7 +298,7 @@ NS_ENUM(NSInteger, ENPEntryType) {
   ENPEntry *entry = self.entries[section];
   if (entry.type == ENPEntryTypeNotebook) {
     if (self.completionBlock)
-      self.completionBlock(entry.notebook);
+      self.completionBlock(nil, entry.notebook);
     [self.navigationController dismissViewControllerAnimated:YES completion:nil];
   }
   
