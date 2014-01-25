@@ -11,7 +11,7 @@
 
 @interface ENNotebookPickerViewController : UIViewController
 
-+ (id) controllerWithCompletion:(void (^)(NSError *error, EDAMNotebook* notebook))completionBlock;
++ (id) controllerWithDisabledNotebooks:(NSArray*)disabledNotebooks completion:(void (^)(NSError *error, EDAMNotebook* notebook))completionBlock;
 
 @property (nonatomic, copy) void (^completionBlock)(NSError *error, EDAMNotebook *notebook);
 

@@ -28,6 +28,17 @@ NS_ENUM(NSInteger, ENPEntryType) {
 @implementation ENPEntry
 @end
 
+@interface NSString (Additions)
+- (BOOL) hasSubstring:(NSString*)aString;
+@end
+@implementation NSString (Additions)
+
+- (BOOL) hasSubstring:(NSString *)aString {
+  NSRange range = [self rangeOfString:aString options:NSCaseInsensitiveSearch];
+  return range.location != NSNotFound;
+}
+@end
+
 #define SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(v)  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
 #define isIOS7 SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0")
 
@@ -38,6 +49,7 @@ NS_ENUM(NSInteger, ENPEntryType) {
 @property (nonatomic, strong) NSMutableArray *entries;
 @property (nonatomic, strong) NSMutableArray *searchResults;
 @property (nonatomic, strong) UIActivityIndicatorView *loadingActivity;
+@property (nonatomic, strong) NSArray *disabledNotebooks; // array of EDAMNotebook ID
 @end
 
 @implementation ENNotebookPickerViewController {
@@ -56,10 +68,11 @@ NS_ENUM(NSInteger, ENPEntryType) {
   return bundle;
 }
 
-+ (id) controllerWithCompletion:(void (^)(NSError *error, EDAMNotebook* notebook))completionBlock {
++ (id) controllerWithDisabledNotebooks:(NSArray*)disabledNotebooks
+                            completion:(void (^)(NSError *error, EDAMNotebook* notebook))completionBlock {
   ENNotebookPickerViewController *picker = [[ENNotebookPickerViewController alloc] initWithNibName:@"ENNotebookPickerViewController" bundle:[ENNotebookPickerViewController bundle]];
   picker.completionBlock = completionBlock;
-  
+  picker.disabledNotebooks = disabledNotebooks;
   UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:picker];
   
   return nav;
@@ -78,8 +91,6 @@ NS_ENUM(NSInteger, ENPEntryType) {
 {
   [super viewDidLoad];
   
-//  UIBarButtonItem *done = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(doneButtonTapped)];
-
   UIBarButtonItem *cancel = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancelButtonTapped)];
   
   self.navigationItem.leftBarButtonItem = cancel;
@@ -96,6 +107,10 @@ NS_ENUM(NSInteger, ENPEntryType) {
   [self.tableView addSubview:self.loadingActivity];
   [self.loadingActivity startAnimating];
 
+  [self.navigationController.navigationBar setBarTintColor:[UIColor colorWithRed:45.0/255.0 green:190.0/255.0 blue:96.0/255.0 alpha:1.0]];
+  [self.navigationController.navigationBar setTintColor:[UIColor whiteColor]];
+  [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
+  self.title = @"Select one notebook";
   
   self.searchBar = [[UISearchBar alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 44)];
   self.tableView.tableHeaderView = self.searchBar;
@@ -138,7 +153,6 @@ NS_ENUM(NSInteger, ENPEntryType) {
         newEntry.notebook = notebook;
         newEntry.name = notebook.name;
         [entries addObject:newEntry];
-        
       }
       
     }
@@ -177,12 +191,12 @@ NS_ENUM(NSInteger, ENPEntryType) {
   self.searchResults = [NSMutableArray array];
   for (ENPEntry *entry in self.entries) {
     if (entry.type == ENPEntryTypeNotebook) {
-      if ([entry.name hasPrefix:searchString]) {
+      if ([entry.name hasSubstring:searchString]) {
         [self.searchResults addObject:entry.notebook];
       }
     } else {
       for (EDAMNotebook *notebook in entry.stackedNotebooks) {
-        if ([notebook.name hasPrefix:searchString]) {
+        if ([notebook.name hasSubstring:searchString]) {
           [self.searchResults addObject:notebook];
         }
       }
@@ -222,12 +236,19 @@ NS_ENUM(NSInteger, ENPEntryType) {
     if (isIOS7)
       cell.separatorInset = UIEdgeInsetsZero;
 
-    [(UIImageView*)cell.accessoryView setImage:[UIImage imageNamed:@"down" bundle:[[self class] bundle]]];
+    [(UIImageView*)cell.accessoryView setImage:[UIImage imageNamed:@"expand" bundle:[[self class] bundle]]];
     return cell;
 
   } else {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"NotebookCell" forIndexPath:[NSIndexPath indexPathForRow:0 inSection:section]];
-    cell.accessoryView = nil;
+    if (self.disabledNotebooks && [self.disabledNotebooks containsObject:entry.notebook.guid]) {
+      cell.accessoryView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"check" bundle:[[self class] bundle]]];
+      cell.accessoryView.frame = CGRectMake(0, 0, 20, 20);
+    } else {
+      cell.accessoryView = nil;
+    }
+    cell.selectionStyle = UITableViewCellSelectionStyleGray;
+
     if (isIOS7)
       cell.separatorInset = UIEdgeInsetsZero;
 
@@ -238,12 +259,11 @@ NS_ENUM(NSInteger, ENPEntryType) {
 
 }
 
-
 - (void) tableView:(ExpandableTableView *)tableView willExpandSection:(NSUInteger)section {
   ENPEntry *entry = self.entries[section];
   if (entry.type == ENPEntryTypeStack) {
     ENStackCell *cell = (ENStackCell*)[tableView cellForSection:section];
-    [(UIImageView*)cell.accessoryView setImage:[UIImage imageNamed:@"up" bundle:[[self class] bundle]]];
+    [(UIImageView*)cell.accessoryView setImage:[UIImage imageNamed:@"collapse" bundle:[[self class] bundle]]];
   }
 }
 
@@ -251,7 +271,7 @@ NS_ENUM(NSInteger, ENPEntryType) {
   ENPEntry *entry = self.entries[section];
   if (entry.type == ENPEntryTypeStack) {
     ENStackCell *cell = (ENStackCell*)[tableView cellForSection:section];
-    [(UIImageView*)cell.accessoryView setImage:[UIImage imageNamed:@"down" bundle:[[self class] bundle]]];
+    [(UIImageView*)cell.accessoryView setImage:[UIImage imageNamed:@"expand" bundle:[[self class] bundle]]];
   }
   
 }
@@ -262,6 +282,14 @@ NS_ENUM(NSInteger, ENPEntryType) {
     
     EDAMNotebook *notebook = [self.entries[indexPath.section] stackedNotebooks][indexPath.row];
     cell.textLabel.text = notebook.name;
+    if (self.disabledNotebooks && [self.disabledNotebooks containsObject:notebook.guid]) {
+      cell.accessoryView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"check" bundle:[[self class] bundle]]];
+      cell.accessoryView.frame = CGRectMake(0, 0, 20, 20);
+    } else {
+      cell.accessoryView = nil;
+    }
+    cell.selectionStyle = UITableViewCellSelectionStyleGray;
+
     return cell;
   } else {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ResultCell"];
@@ -270,6 +298,13 @@ NS_ENUM(NSInteger, ENPEntryType) {
     }
     
     cell.textLabel.text = [self.searchResults[indexPath.row] name];
+    if (self.disabledNotebooks && [self.disabledNotebooks containsObject:[self.searchResults[indexPath.row] guid]]) {
+      cell.accessoryView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"check" bundle:[[self class] bundle]]];
+      cell.accessoryView.frame = CGRectMake(0, 0, 20, 20);
+    } else {
+      cell.accessoryView = nil;
+    }
+    cell.selectionStyle = UITableViewCellSelectionStyleGray;
     
     return cell;
 
@@ -281,12 +316,19 @@ NS_ENUM(NSInteger, ENPEntryType) {
   
   if (tableView == self.searchDisplayController.searchResultsTableView) {
     EDAMNotebook *notebook = self.searchResults[indexPath.row];
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    if (self.disabledNotebooks && [self.disabledNotebooks containsObject:notebook.guid])
+      return;
+    
     if (self.completionBlock)
       self.completionBlock(nil, notebook);
     [self.navigationController dismissViewControllerAnimated:YES completion:nil];
   } else {
     ENPEntry *entry = self.entries[indexPath.section];
     EDAMNotebook *notebook = entry.stackedNotebooks[indexPath.row];
+    if (self.disabledNotebooks && [self.disabledNotebooks containsObject:notebook.guid])
+      return;
+
     if (self.completionBlock)
       self.completionBlock(nil, notebook);
     [self.navigationController dismissViewControllerAnimated:YES completion:nil];
@@ -297,6 +339,9 @@ NS_ENUM(NSInteger, ENPEntryType) {
   
   ENPEntry *entry = self.entries[section];
   if (entry.type == ENPEntryTypeNotebook) {
+    if (self.disabledNotebooks && [self.disabledNotebooks containsObject:entry.notebook.guid])
+      return;
+
     if (self.completionBlock)
       self.completionBlock(nil, entry.notebook);
     [self.navigationController dismissViewControllerAnimated:YES completion:nil];

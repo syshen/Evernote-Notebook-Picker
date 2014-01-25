@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>9D6EFD01-CB36-4C3D-A854-C0C532E25EE9</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Notebook Picker Sample</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>42B50E39-CA7A-4599-A8BF-A6DED6301F55</key>
+		<string>https://github.com/syshen/Evernote-Notebook-Picker.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Notebook Picker Sample.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>42B50E39-CA7A-4599-A8BF-A6DED6301F55</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/syshen/Evernote-Notebook-Picker.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>42B50E39-CA7A-4599-A8BF-A6DED6301F55</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>42B50E39-CA7A-4599-A8BF-A6DED6301F55</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Notebook Picker Sample</string>
+		</dict>
+	</array>
+</dict>
+</plist>

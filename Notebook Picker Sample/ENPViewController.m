@@ -27,8 +27,11 @@
   [super viewDidAppear:animated];
   
   if([[EvernoteSession sharedSession] isAuthenticated] && !self.selectedNotebook) {
-    UIViewController *vc = [ENNotebookPickerViewController controllerWithCompletion:^(EDAMNotebook *notebook) {
-      self.selectedNotebook = notebook;
+    NSArray *existingNotebooks = @[@"3a6fc705-e291-4866-a6e2-689453e3e51d", @"421249cd-4b3e-422a-bbb1-8865480daf71", @"ae216f3b-1f48-4c54-81f7-cd3ff9c04565"];
+    UIViewController *vc = [ENNotebookPickerViewController
+                            controllerWithDisabledNotebooks:existingNotebooks
+                            completion:^(NSError *error, EDAMNotebook *notebook) {
+                              self.selectedNotebook = notebook;
     }];
     [self presentViewController:vc animated:YES completion:nil];
   }

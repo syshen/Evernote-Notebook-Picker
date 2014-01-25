@@ -27,13 +27,18 @@
 		8005BD16187AAE3C0087F277 /* ExpandableTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8005BD12187AAE3C0087F277 /* ExpandableTableViewController.m */; };
 		8005BD1D187AB25A0087F277 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8005BD1C187AB25A0087F277 /* Cocoa.framework */; };
 		8005BD27187AB25A0087F277 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8005BD25187AB25A0087F277 /* InfoPlist.strings */; };
-		8005BD36187AB3B00087F277 /* down@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8005BD2C187AB3A20087F277 /* down@2x.png */; };
 		8005BD37187AB3B00087F277 /* ENNotebookPickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8005BD2D187AB3A20087F277 /* ENNotebookPickerViewController.xib */; };
 		8005BD38187AB3B00087F277 /* ENStackCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8005BD2E187AB3A20087F277 /* ENStackCell.xib */; };
-		8005BD39187AB3B00087F277 /* stack@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8005BD2F187AB3A20087F277 /* stack@2x.png */; };
-		8005BD3A187AB3B00087F277 /* up@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8005BD30187AB3A20087F277 /* up@2x.png */; };
 		8005BD40187AB8480087F277 /* NotebookPicker.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 8005BD1B187AB25A0087F277 /* NotebookPicker.bundle */; };
 		8005BD43187AB9FC0087F277 /* UIImage+ENPAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 8005BD42187AB9FC0087F277 /* UIImage+ENPAdditions.m */; };
+		807285F51893BAE000A8D0EF /* collapse.png in Resources */ = {isa = PBXBuildFile; fileRef = 807285E91893BAD500A8D0EF /* collapse.png */; };
+		807285F61893BAE000A8D0EF /* collapse@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 807285EA1893BAD500A8D0EF /* collapse@2x.png */; };
+		807285F71893BAE000A8D0EF /* expand.png in Resources */ = {isa = PBXBuildFile; fileRef = 807285EB1893BAD500A8D0EF /* expand.png */; };
+		807285F81893BAE000A8D0EF /* expand@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 807285EC1893BAD500A8D0EF /* expand@2x.png */; };
+		807285F91893BAE000A8D0EF /* stack.png in Resources */ = {isa = PBXBuildFile; fileRef = 807285ED1893BAD500A8D0EF /* stack.png */; };
+		807285FA1893BAE000A8D0EF /* stack@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 807285EE1893BAD500A8D0EF /* stack@2x.png */; };
+		807285FF1893BD6100A8D0EF /* check.png in Resources */ = {isa = PBXBuildFile; fileRef = 807285FB1893BD2A00A8D0EF /* check.png */; };
+		807286001893BD6100A8D0EF /* check@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 807285FC1893BD2A00A8D0EF /* check@2x.png */; };
 		DFC74B18C1694CBF85A872AE /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 679D9603F68A48E28E3C916F /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -93,13 +98,18 @@
 		8005BD24187AB25A0087F277 /* NotebookPicker-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "NotebookPicker-Info.plist"; sourceTree = "<group>"; };
 		8005BD26187AB25A0087F277 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		8005BD28187AB25A0087F277 /* NotebookPicker-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NotebookPicker-Prefix.pch"; sourceTree = "<group>"; };
-		8005BD2C187AB3A20087F277 /* down@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "down@2x.png"; path = "Evernote Notebook Picker/down@2x.png"; sourceTree = "<group>"; };
 		8005BD2D187AB3A20087F277 /* ENNotebookPickerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ENNotebookPickerViewController.xib; path = "Evernote Notebook Picker/ENNotebookPickerViewController.xib"; sourceTree = "<group>"; };
 		8005BD2E187AB3A20087F277 /* ENStackCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ENStackCell.xib; path = "Evernote Notebook Picker/ENStackCell.xib"; sourceTree = "<group>"; };
-		8005BD2F187AB3A20087F277 /* stack@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "stack@2x.png"; path = "Evernote Notebook Picker/stack@2x.png"; sourceTree = "<group>"; };
-		8005BD30187AB3A20087F277 /* up@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "up@2x.png"; path = "Evernote Notebook Picker/up@2x.png"; sourceTree = "<group>"; };
 		8005BD41187AB9FC0087F277 /* UIImage+ENPAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+ENPAdditions.h"; path = "Evernote Notebook Picker/UIImage+ENPAdditions.h"; sourceTree = "<group>"; };
 		8005BD42187AB9FC0087F277 /* UIImage+ENPAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+ENPAdditions.m"; path = "Evernote Notebook Picker/UIImage+ENPAdditions.m"; sourceTree = "<group>"; };
+		807285E91893BAD500A8D0EF /* collapse.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = collapse.png; path = "Evernote Notebook Picker/collapse.png"; sourceTree = "<group>"; };
+		807285EA1893BAD500A8D0EF /* collapse@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "collapse@2x.png"; path = "Evernote Notebook Picker/collapse@2x.png"; sourceTree = "<group>"; };
+		807285EB1893BAD500A8D0EF /* expand.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = expand.png; path = "Evernote Notebook Picker/expand.png"; sourceTree = "<group>"; };
+		807285EC1893BAD500A8D0EF /* expand@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "expand@2x.png"; path = "Evernote Notebook Picker/expand@2x.png"; sourceTree = "<group>"; };
+		807285ED1893BAD500A8D0EF /* stack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = stack.png; path = "Evernote Notebook Picker/stack.png"; sourceTree = "<group>"; };
+		807285EE1893BAD500A8D0EF /* stack@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "stack@2x.png"; path = "Evernote Notebook Picker/stack@2x.png"; sourceTree = "<group>"; };
+		807285FB1893BD2A00A8D0EF /* check.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = check.png; path = "Evernote Notebook Picker/check.png"; sourceTree = "<group>"; };
+		807285FC1893BD2A00A8D0EF /* check@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "check@2x.png"; path = "Evernote Notebook Picker/check@2x.png"; sourceTree = "<group>"; };
 		A1DACB4CD0FD47E2941BB6DA /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -219,11 +229,16 @@
 		8005BCE5187A6CA90087F277 /* Evernote Notebook Picker */ = {
 			isa = PBXGroup;
 			children = (
-				8005BD2C187AB3A20087F277 /* down@2x.png */,
+				807285E91893BAD500A8D0EF /* collapse.png */,
+				807285EA1893BAD500A8D0EF /* collapse@2x.png */,
+				807285EB1893BAD500A8D0EF /* expand.png */,
+				807285EC1893BAD500A8D0EF /* expand@2x.png */,
+				807285ED1893BAD500A8D0EF /* stack.png */,
+				807285EE1893BAD500A8D0EF /* stack@2x.png */,
+				807285FB1893BD2A00A8D0EF /* check.png */,
+				807285FC1893BD2A00A8D0EF /* check@2x.png */,
 				8005BD2D187AB3A20087F277 /* ENNotebookPickerViewController.xib */,
 				8005BD2E187AB3A20087F277 /* ENStackCell.xib */,
-				8005BD2F187AB3A20087F277 /* stack@2x.png */,
-				8005BD30187AB3A20087F277 /* up@2x.png */,
 				8005BD0F187AAE3C0087F277 /* ExpandableTableView.h */,
 				8005BD10187AAE3C0087F277 /* ExpandableTableView.m */,
 				8005BD11187AAE3C0087F277 /* ExpandableTableViewController.h */,
@@ -385,11 +400,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8005BD36187AB3B00087F277 /* down@2x.png in Resources */,
+				807285FF1893BD6100A8D0EF /* check.png in Resources */,
+				807286001893BD6100A8D0EF /* check@2x.png in Resources */,
+				807285F51893BAE000A8D0EF /* collapse.png in Resources */,
+				807285F61893BAE000A8D0EF /* collapse@2x.png in Resources */,
+				807285F71893BAE000A8D0EF /* expand.png in Resources */,
+				807285F81893BAE000A8D0EF /* expand@2x.png in Resources */,
+				807285F91893BAE000A8D0EF /* stack.png in Resources */,
+				807285FA1893BAE000A8D0EF /* stack@2x.png in Resources */,
 				8005BD37187AB3B00087F277 /* ENNotebookPickerViewController.xib in Resources */,
 				8005BD38187AB3B00087F277 /* ENStackCell.xib in Resources */,
-				8005BD39187AB3B00087F277 /* stack@2x.png in Resources */,
-				8005BD3A187AB3B00087F277 /* up@2x.png in Resources */,
 				8005BD27187AB25A0087F277 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -658,7 +678,7 @@
 		8005BD2A187AB25A0087F277 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
+				COMBINE_HIDPI_IMAGES = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
@@ -683,7 +703,7 @@
 		8005BD2B187AB25A0087F277 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
+				COMBINE_HIDPI_IMAGES = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
