@@ -244,10 +244,11 @@ NS_ENUM(NSInteger, ENPEntryType) {
     if (self.disabledNotebooks && [self.disabledNotebooks containsObject:entry.notebook.guid]) {
       cell.accessoryView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"check" bundle:[[self class] bundle]]];
       cell.accessoryView.frame = CGRectMake(0, 0, 20, 20);
+      cell.selectionStyle = UITableViewCellSelectionStyleNone;
     } else {
       cell.accessoryView = nil;
+      cell.selectionStyle = UITableViewCellSelectionStyleGray;
     }
-    cell.selectionStyle = UITableViewCellSelectionStyleGray;
 
     if (isIOS7)
       cell.separatorInset = UIEdgeInsetsZero;
