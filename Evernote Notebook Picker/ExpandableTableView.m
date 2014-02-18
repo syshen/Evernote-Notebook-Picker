@@ -454,7 +454,7 @@
 }
 
 - (void) deselectRowAtIndexPath:(NSIndexPath *)indexPath animated:(BOOL)animated {
-	if ([_expandedSectionIndexes containsIndex:indexPath.section] && indexPath.row != 0) {
+	if ([_expandedSectionIndexes containsIndex:indexPath.section]) {
     [super deselectRowAtIndexPath:[NSIndexPath indexPathForRow:indexPath.row+1 inSection:indexPath.section] animated:animated];
   } else {
     [super deselectRowAtIndexPath:indexPath animated:animated];
