@@ -453,6 +453,14 @@
 	}
 }
 
+- (void) deselectRowAtIndexPath:(NSIndexPath *)indexPath animated:(BOOL)animated {
+	if ([_expandedSectionIndexes containsIndex:indexPath.section] && indexPath.row != 0) {
+    [super deselectRowAtIndexPath:[NSIndexPath indexPathForRow:indexPath.row+1 inSection:indexPath.section] animated:animated];
+  } else {
+    [super deselectRowAtIndexPath:indexPath animated:animated];
+  }
+}
+
 - (NSIndexPath *)tableView:(ExpandableTableView *)tableView willDeselectRowAtIndexPath:(NSIndexPath *)indexPath {
 	NSIndexPath *newIndexPath = indexPath;
 	if ([_expandedSectionIndexes containsIndex:indexPath.section] && indexPath.row != 0) {
